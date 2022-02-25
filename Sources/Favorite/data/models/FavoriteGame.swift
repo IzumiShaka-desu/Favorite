@@ -8,7 +8,7 @@
 import RealmSwift
 
 public class FavoriteGame: Object, Identifiable {
-  @Persisted(primaryKey: true) var id: Int
+public  @Persisted(primaryKey: true) var id: Int
   @Persisted var name: String
   @Persisted var imageUrl: String
   @Persisted var genres: List<String>
