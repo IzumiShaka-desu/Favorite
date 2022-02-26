@@ -33,13 +33,13 @@ extension LocaleDataSource: LocaleDataSourceProtocol {
     return Future<Bool, Error> {completion in
       if let realm = self.realm {
         let result = realm.object(ofType: FavoriteGame.self, forPrimaryKey: idGame) != nil
-     
+
         completion(.success(result))
       } else {
         completion(.failure(DatabaseError.invalidInstance))
       }
     }.eraseToAnyPublisher()
-     
+
   }
 
   func addOrDeleteFavoriteGame(favoritedGame: FavoriteGame, isFavorited: Bool) {
@@ -54,5 +54,5 @@ extension LocaleDataSource: LocaleDataSourceProtocol {
     }
 
   }
-  
+
 }

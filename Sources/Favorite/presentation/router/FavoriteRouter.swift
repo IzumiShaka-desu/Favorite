@@ -10,13 +10,12 @@ import SwiftUI
 public class FavoriteRouter {
 
  public func makeDetailView(for id: Int) -> some View {
-  
+
     return DefaultView()
   }
 }
-struct DefaultView:View{
-  var body: some View{
-    HStack{}
+struct DefaultView: View {
+  var body: some View {
+    HStack {}
   }
 }
-

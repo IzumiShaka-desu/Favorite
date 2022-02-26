@@ -35,16 +35,16 @@ struct FavoriteView: View {
           }
         }
       }
-      
+
     }.padding(0)
   }
 }
 
-//struct FavoriteView_Previews: PreviewProvider {
+// struct FavoriteView_Previews: PreviewProvider {
 //  init() {
 //    Injectors.sharedInstance.inject()
 //  }
 //  static var previews: some View {
 //    FavoriteView(presenter: Injectors.sharedInstance.favoritePresenter)
 //  }
-//}
+// }

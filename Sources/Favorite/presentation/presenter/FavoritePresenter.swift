@@ -16,7 +16,7 @@ class FavoritePresenter: ObservableObject {
   init(router: FavoriteRouter) {
     self.router = router
   }
-  
+
   func linkBuilder<Content: View>(
     for id: Int,
     @ViewBuilder content: () -> Content
