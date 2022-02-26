@@ -7,8 +7,9 @@
 import RealmSwift
 import Foundation
 import Combine
+import Common
 
-protocol LocaleDataSourceProtocol: AnyObject {
+public protocol LocaleDataSourceProtocol: AnyObject {
   func addOrDeleteFavoriteGame(favoritedGame: FavoriteGame, isFavorited: Bool)
   @available(macOS 10.15, *)
   func isGameFavorited(for idGame: Int) -> AnyPublisher<Bool, Error>
