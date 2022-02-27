@@ -28,10 +28,6 @@ let package = Package(
             name: "Favorite",
             dependencies: [
               "Common",
-<<<<<<< HEAD
-=======
-              .product(name: "RealmSwift", package: "realm-cocoa.git")
->>>>>>> b7c9a76f19024882f7ba8b3fd361ba8517a1d47b
             ]),
         .testTarget(
             name: "FavoriteTests",
