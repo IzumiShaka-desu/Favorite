@@ -15,6 +15,10 @@ let package = Package(
     dependencies: [
         // Dependencies declare other packages that this package depends on.
         // .package(url: /* package url */, from: "1.0.0"),
+<<<<<<< HEAD
+=======
+      .package(url: "https://github.com/realm/realm-cocoa.git", .branch("master")),
+>>>>>>> b7c9a76f19024882f7ba8b3fd361ba8517a1d47b
       .package(url: "https://github.com/IzumiShaka-desu/Common.git", .branch("main"))
          ],
     targets: [
@@ -24,6 +28,10 @@ let package = Package(
             name: "Favorite",
             dependencies: [
               "Common",
+<<<<<<< HEAD
+=======
+              .product(name: "RealmSwift", package: "realm-cocoa.git")
+>>>>>>> b7c9a76f19024882f7ba8b3fd361ba8517a1d47b
             ]),
         .testTarget(
             name: "FavoriteTests",
