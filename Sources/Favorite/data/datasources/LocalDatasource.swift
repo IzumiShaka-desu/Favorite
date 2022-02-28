@@ -28,7 +28,7 @@ public final class LocaleDataSource: NSObject {
 
 }
 
-public extension LocaleDataSource: LocaleDataSourceProtocol {
+ extension LocaleDataSource: LocaleDataSourceProtocol {
 public  func isGameFavorited(for idGame: Int) -> AnyPublisher<Bool, Error> {
     return Future<Bool, Error> {completion in
       if let realm = self.realm {
