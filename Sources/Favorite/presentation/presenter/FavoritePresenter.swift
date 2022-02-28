@@ -13,7 +13,7 @@ public class FavoritePresenter: ObservableObject {
   @ObservedResults(FavoriteGame.self) var games
   private let router: FavoriteRouterBase
 
-  init(router: FavoriteRouterBase) {
+public  init(router: FavoriteRouterBase) {
     self.router = router
   }
 
