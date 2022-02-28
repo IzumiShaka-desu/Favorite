@@ -7,14 +7,14 @@
 
 import SwiftUI
 
-public class FavoriteRouter {
+open class FavoriteRouterBase {
 
- public func makeDetailView(for id: Int) -> some View {
+ open func makeDetailView(for id: Int) -> some View {
 
     return DefaultView()
   }
 }
-struct DefaultView: View {
+ struct DefaultView: View {
   var body: some View {
     HStack {}
   }
