@@ -10,7 +10,9 @@ import RealmSwift
 import Common
 public struct FavoriteView: View {
   @ObservedObject  var presenter: FavoritePresenter
-  public init() {}
+  public init(presenter: FavoritePresenter) {
+    self.presenter = presenter
+  }
 public  var body: some View {
     ZStack(alignment: .top) {
       Color.flatDarkBackground.ignoresSafeArea()
@@ -40,4 +42,3 @@ public  var body: some View {
     }.padding(0)
   }
 }
-
