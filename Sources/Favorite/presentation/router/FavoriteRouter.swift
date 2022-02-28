@@ -8,9 +8,9 @@
 import SwiftUI
 
 open class FavoriteRouterBase {
-open init() {
+public init() {
 }
- open func makeDetailView(for id: Int) -> some View {
+ public func makeDetailView(for id: Int) -> some View {
 
     return DefaultView()
   }
