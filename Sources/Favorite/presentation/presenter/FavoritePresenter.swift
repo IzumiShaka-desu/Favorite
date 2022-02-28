@@ -11,9 +11,9 @@ import SwiftUI
 
 class FavoritePresenter: ObservableObject {
   @ObservedResults(FavoriteGame.self) var games
-  private let router: FavoriteRouter
+  private let router: FavoriteRouterBase
 
-  init(router: FavoriteRouter) {
+  init(router: FavoriteRouterBase) {
     self.router = router
   }
 
