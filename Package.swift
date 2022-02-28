@@ -23,7 +23,7 @@ let package = Package(
         .target(
             name: "Favorite",
             dependencies: [
-              "Common",
+              "Common"
             ]),
         .testTarget(
             name: "FavoriteTests",
