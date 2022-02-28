@@ -14,7 +14,7 @@ open class FavoriteRouterBase {
     return DefaultView()
   }
 }
-open struct DefaultView: View {
+public struct DefaultView: View {
   var body: some View {
     HStack {}
   }
