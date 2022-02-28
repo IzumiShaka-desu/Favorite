@@ -14,7 +14,7 @@ public protocol LocaleDataSourceProtocol: AnyObject {
   @available(macOS 10.15, *)
   func isGameFavorited(for idGame: Int) -> AnyPublisher<Bool, Error>
 }
-final class LocaleDataSource: NSObject {
+public final class LocaleDataSource: NSObject {
   @ObservedResults(FavoriteGame.self) var games
   private let realm: Realm?
 
@@ -29,7 +29,7 @@ final class LocaleDataSource: NSObject {
 }
 
 extension LocaleDataSource: LocaleDataSourceProtocol {
-  func isGameFavorited(for idGame: Int) -> AnyPublisher<Bool, Error> {
+public  func isGameFavorited(for idGame: Int) -> AnyPublisher<Bool, Error> {
     return Future<Bool, Error> {completion in
       if let realm = self.realm {
         let result = realm.object(ofType: FavoriteGame.self, forPrimaryKey: idGame) != nil
@@ -42,7 +42,7 @@ extension LocaleDataSource: LocaleDataSourceProtocol {
 
   }
 
-  func addOrDeleteFavoriteGame(favoritedGame: FavoriteGame, isFavorited: Bool) {
+public  func addOrDeleteFavoriteGame(favoritedGame: FavoriteGame, isFavorited: Bool) {
     if isFavorited {
       guard let object=realm?.object(
         ofType: FavoriteGame.self,
