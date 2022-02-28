@@ -8,9 +8,9 @@
 import SwiftUI
 import RealmSwift
 import Common
-struct FavoriteView: View {
+public struct FavoriteView: View {
   @ObservedObject  var presenter: FavoritePresenter
-  var body: some View {
+public  var body: some View {
     ZStack(alignment: .top) {
       Color.flatDarkBackground.ignoresSafeArea()
       VStack {
@@ -40,11 +40,3 @@ struct FavoriteView: View {
   }
 }
 
-// struct FavoriteView_Previews: PreviewProvider {
-//  init() {
-//    Injectors.sharedInstance.inject()
-//  }
-//  static var previews: some View {
-//    FavoriteView(presenter: Injectors.sharedInstance.favoritePresenter)
-//  }
-// }
