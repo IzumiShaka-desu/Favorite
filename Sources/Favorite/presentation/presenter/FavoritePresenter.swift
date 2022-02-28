@@ -9,11 +9,11 @@ import Combine
 import RealmSwift
 import SwiftUI
 
-public class FavoritePresenter: ObservableObject {
+public class FavoritePresenter<DetailView: View>: ObservableObject {
   @ObservedResults(FavoriteGame.self) var games
-  private let router: FavoriteRouterBase
+  let router: ((_ id: Int) -> DetailView)
 
-public  init(router: FavoriteRouterBase) {
+public  init(router: @escaping ((Int) -> DetailView)) {
     self.router = router
   }
 
@@ -22,7 +22,7 @@ public  init(router: FavoriteRouterBase) {
     @ViewBuilder content: () -> Content
   ) -> some View {
     NavigationLink(
-      destination: router.makeDetailView(for: id)) { content() }
+      destination: self.router(id)) { content() }
     .padding(0)
     .buttonStyle(PlainButtonStyle())
   }

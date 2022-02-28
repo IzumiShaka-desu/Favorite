@@ -8,9 +8,9 @@
 import SwiftUI
 import RealmSwift
 import Common
-public struct FavoriteView: View {
-  @ObservedObject  var presenter: FavoritePresenter
-  public init(presenter: FavoritePresenter) {
+public struct FavoriteView<DetailView: View>: View {
+  @ObservedObject  var presenter: FavoritePresenter<DetailView>
+  public init(presenter: FavoritePresenter<DetailView>) {
     self.presenter = presenter
   }
 public  var body: some View {
