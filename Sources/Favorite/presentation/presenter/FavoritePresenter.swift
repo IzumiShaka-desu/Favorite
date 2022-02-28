@@ -9,11 +9,11 @@ import Combine
 import RealmSwift
 import SwiftUI
 
-class FavoritePresenter: ObservableObject {
+public class FavoritePresenter: ObservableObject {
   @ObservedResults(FavoriteGame.self) var games
   private let router: FavoriteRouter
 
-  init(router: FavoriteRouter) {
+public  init(router: FavoriteRouter) {
     self.router = router
   }
 
