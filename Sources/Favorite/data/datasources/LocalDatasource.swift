@@ -22,13 +22,13 @@ public final class LocaleDataSource: NSObject {
     self.realm = realm
   }
 
-  static let sharedInstance: (Realm?) -> LocaleDataSource = { realmDatabase in
+ public static let sharedInstance: (Realm?) -> LocaleDataSource = { realmDatabase in
     return LocaleDataSource(realm: realmDatabase)
   }
 
 }
 
-extension LocaleDataSource: LocaleDataSourceProtocol {
+public extension LocaleDataSource: LocaleDataSourceProtocol {
 public  func isGameFavorited(for idGame: Int) -> AnyPublisher<Bool, Error> {
     return Future<Bool, Error> {completion in
       if let realm = self.realm {
