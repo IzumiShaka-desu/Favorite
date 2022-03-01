@@ -10,7 +10,6 @@ import RealmSwift
 import SwiftUI
 
 public class FavoritePresenter<DetailView: View>: ObservableObject {
-  @ObservedResults(FavoriteGame.self) var games
   let router: ((_ id: Int) -> DetailView)
 
 public  init(router: @escaping ((Int) -> DetailView)) {

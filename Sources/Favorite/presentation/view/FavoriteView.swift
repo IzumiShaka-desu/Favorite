@@ -10,6 +10,7 @@ import RealmSwift
 import Common
 public struct FavoriteView<DetailView: View>: View {
   @ObservedObject  var presenter: FavoritePresenter<DetailView>
+  @ObservedResults(FavoriteGame.self) var games
   public init(presenter: FavoritePresenter<DetailView>) {
     self.presenter = presenter
   }
@@ -17,10 +18,11 @@ public  var body: some View {
     ZStack(alignment: .top) {
       Color.flatDarkBackground.ignoresSafeArea()
       VStack {
-        if presenter.games.isEmpty {
+        if games.isEmpty {
           Text("You don't have any favourite games")
         } else {
-          List(presenter.games, id: \.id) {item in
+          List {
+            ForEach(games) {item in
             presenter.linkBuilder(for: item.id) {
               ItemList(
                 title: item.name ,
@@ -35,6 +37,7 @@ public  var body: some View {
               )
             }
             .listRowBackground(Color.flatDarkBackground)
+          }
           }
         }
       }
